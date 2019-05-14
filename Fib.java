@@ -21,8 +21,10 @@ public class Fib {
       else return -2; // invalid Fibonacci number
       return result;
     }
-     /* These are class / instance methods because...
+     /* These are class methods because we don't apply it to Fib objects but rather user's inputs.
     */
+
+    //Roughly, the highest index is 45~47.
 
 
     /** 
@@ -32,17 +34,19 @@ public class Fib {
     public static long fib_grade8( int n) {
       int result = 0;
       int first = 1;
-      int second = 1;
-        
-      if( n == 1 || n == 2)
-        return 1;
-      else {
-        for( int current = n; n > 2; n--){
+      int second;
 
+      if( n > 0) {
+      for( int current = 0; current < n; current++){
+          second = result + first;
+          result = first;
+          first = second;
         }
+      return result;
       }
-        return -2; // invalid Fibonacci number
+      else return -2;
     }
+
     /* Time complexity:
        Consider the size of the problem to be ...
        
